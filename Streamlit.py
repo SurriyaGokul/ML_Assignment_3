@@ -32,8 +32,7 @@ def load_vocab(vocab_path):
 st.title("Next Word Prediction Model")
 st.write("Generate text using a context-based model with configurable parameters.")
 
-# Load the vocabulary
-# Update this line with your specific vocabulary file path
+
 # Model configuration selections
 embedding_size = st.selectbox("Embedding Size:", [64, 128])
 context_length = st.selectbox("Context Length:", [5, 10, 15])
@@ -41,8 +40,7 @@ activation_function = st.selectbox("Activation Function:", ["ReLU", "Tanh"])
 
 # Define fixed model parameters
 activation_suffix = f"{activation_function.lower()}"
-# Construct the weights path
-weights_dir = "Model Weights"  # Update with your weights path
+weights_dir = "Model Weights"
 weights_path = f"{weights_dir}/model_weights_c={context_length}_e={embedding_size},{activation_suffix}.pth"
 vocab_path = f"Vocabulary/word2idx_c={context_length}_e={embedding_size},{activation_suffix}.json"
 vocab = load_vocab(vocab_path)
